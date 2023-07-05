@@ -6,7 +6,9 @@ import { getUserById, getUsers, createUser, deleteUser, updateUser } from "./que
 const port = process.env.PORT || 3333;
 
 app.use(bodyParser.json());
-
+app.get("/", (req, res) => {
+    res.send("Hello World");
+})
 app.get("/user/:id", getUserById);
 app.get("/users", getUsers);
 app.post("/user", createUser);
